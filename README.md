@@ -136,6 +136,18 @@ Utils.js ： 工具类
 EZPlayer遵守MIT协议，具体请参考MIT
 
 
-
+[react-native-wechat]: https://github.com/yorkie/react-native-wechat
+[npm-image]: https://img.shields.io/npm/v/react-native-ezplayer.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/react-native-ezplayer
+[travis-image]: https://img.shields.io/travis/yorkie/react-native-ezplayer.svg?style=flat-square
+[travis-url]: https://travis-ci.org/yorkie/react-native-ezplayer
+[david-image]: http://img.shields.io/david/yorkie/react-native-ezplayer.svg?style=flat-square
+[david-url]: https://david-dm.org/yorkie/react-native-ezplayer
+[downloads-image]: http://img.shields.io/npm/dm/react-native-ezplayer.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/react-native-ezplayer
+[React Native]: https://github.com/facebook/react-native
+[react-native-cn]: https://github.com/reactnativecn
+[EZPlayer]: https://github.com/easyui/EZPlayer
+[Linking Libraries iOS Guidance]: https://developer.apple.com/library/ios/recipes/xcode_help-project_editor/Articles/AddingaLibrarytoaTarget.html
 
 
