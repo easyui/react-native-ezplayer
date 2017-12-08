@@ -9,7 +9,7 @@ EZPlayer component for react-native apps
 
 
 ## 介绍
-基于EZPlayer(https://github.com/easyui/EZPlayer)封装的视频播放器，功能丰富，快速集成，可定制性强。
+基于[EZPlayer](https://github.com/easyui/EZPlayer)封装的视频播放器，功能丰富，快速集成，可定制性强。
 
 
 ## 特性
