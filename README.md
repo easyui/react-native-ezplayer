@@ -11,11 +11,17 @@ EZPlayer component for react-native apps
 ## 介绍
 基于[EZPlayer](https://github.com/easyui/EZPlayer)封装的视频播放器，功能丰富，快速集成，可定制性强。
 
+## 要求
+- iOS 9.0+ 
+- Xcode 12.0+
+- Swift 5.0+
+- React Native 0.63.3+ 
 
 ## 特性
 - 本地视频、网络视频播放（支持的格式请参考苹果AVPlayer文档）
 - [全屏模式/嵌入模式/浮动模式随意切换(支持根据设备自动旋转)](#DisplayMode)
 - [全屏模式支持横屏全屏和竖屏全屏](#DisplayMode)
+- [浮动模式支持系统PIP和window浮层](#FloatMode)
 - [定制手势：播放/暂停(全屏/嵌入模式双击，浮动模式单击)，浮动和全屏切换（双击），音量/亮度调节（上下滑动），进度调节（左右滑动）](#GestureRecognizer)
 - [支持airPlay](#airPlay)
 - [支持UITableview自动管理嵌入和浮动模式切换](#tableview)
@@ -47,6 +53,7 @@ EZPlayer.js ： 对EZPlayer封装的js api
 | useDefaultUI|使用EZPlayer自带皮肤| PropTypes.bool |
 | videoGravity|视频画面比例| PropTypes.string(aspect,aspectFill,scaleFill) |
 | fullScreenMode|全屏模式是竖屏还是横屏| PropTypes.string(portrait,landscape) |
+| floatMode|浮动模式支持系统PIP和window浮层| PropTypes.string(none,auto,system,window) |
 | onPlayerHeartbeat|播放器声明周期心跳| PropTypes.func |
 | onPlayerPlaybackTimeDidChange|addPeriodicTimeObserver方法的触发| PropTypes.func |
 | onPlayerStatusDidChange|播放器状态改变| PropTypes.func |
@@ -58,6 +65,12 @@ EZPlayer.js ： 对EZPlayer封装的js api
 | onPlayerDisplayModeChangedDidAppear |播放器显示模式动画结束| PropTypes.func |
 | onPlayerTapGestureRecognizer |点击播放器手势通知| PropTypes.func |
 | onPlayerDidPersistContentKey |FairPlay DRM| PropTypes.func |
+| onPlayerPIPControllerWillStart |即将开启画中画| PropTypes.func |
+| onPlayerPIPControllerDidStart |已经开启画中画| PropTypes.func |
+| onPlayerPIPFailedToStart |开启画中画失败| PropTypes.func |
+| onPlayerPIPControllerWillEnd |即将关闭画中画| PropTypes.func |
+| onPlayerPIPControllerDidEnd |已经关闭画中画| PropTypes.func |
+| onPlayerPIPRestoreUserInterfaceForStop |关闭画中画且恢复播放界面| PropTypes.func |
 
 ### 方法
 | function | description |                    
@@ -74,7 +87,7 @@ EZPlayer.js ： 对EZPlayer封装的js api
 | toFloat(animated = true, callback) | 进入悬浮屏模式 |
 | toFull(orientation = 'landscapeLeft', animated = true, callback) | 进入全屏模式，orientation: landscapeLeft , landscapeRight | 
 | fullScreenMode(fullScreenMode)| 设置全屏的模式，fullScreenMode:portrait , landscape | 
-
+| floatMode(floatMode)| 设置浮窗的模式，fullScreenMode:none , auto, system, window,默认值auto | 
 
 ### demo文件：
 

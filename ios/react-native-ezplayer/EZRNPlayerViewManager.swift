@@ -2,15 +2,20 @@
 //  EZRNPlayerViewManager.swift
 //  EZPlayerExample_RN
 //
-//  Created by IQIYI on 2017/9/30.
+//  Created by Zhu yangjun on 2017/9/30.
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 
 import Foundation
 
+import EZPlayer
 
 @objc(EZRNPlayerViewManager)
 class EZRNPlayerViewManager : RCTViewManager {
+  
+  override class func requiresMainQueueSetup() -> Bool {
+    return true
+  }
   
   override func view() -> UIView! {
     return EZRNPlayerView();
@@ -94,6 +99,20 @@ class EZRNPlayerViewManager : RCTViewManager {
   @objc func fullScreenMode(_ reactTag: NSNumber, fullScreenMode:String =  "portrait") {
     self.execute(reactTag: reactTag) { (playerView) in
       playerView.player?.fullScreenMode = fullScreenMode == "portrait" ? .portrait : .landscape
+    }
+  }
+  
+  @objc func floatMode(_ reactTag: NSNumber, floatMode:String =  "auto") {
+    self.execute(reactTag: reactTag) { (playerView) in
+      var ezPlayerFloatMode:EZPlayerFloatMode = .auto
+      switch(floatMode){
+      case "none": ezPlayerFloatMode = .none
+      case "auto": ezPlayerFloatMode = .auto
+      case "system": ezPlayerFloatMode = .system
+      case "window": ezPlayerFloatMode = .window
+      default:ezPlayerFloatMode = .auto
+      }
+      playerView.player?.floatMode = ezPlayerFloatMode
     }
   }
   
